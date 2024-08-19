@@ -14,10 +14,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8509;">3.4.</span> <a href="#model_testing">Model Testing</a><br>
 <span style="color:#fb8509;">4.</span> <a href="#real_time_predictions">Real Time Predictions</a><br>
 <span style="color:#fb8509;">5.</span> <a href="#challenges">Challenges</a><br>
-<span style="color:#fb8509;">6.</span> <a href="#conclusions">Conclusions</a><br>
-<span style="color:#fb8509;">7.</span> <a href="#future_work">Future Work</a><br>
-<span style="color:#fb8509;">8.</span> <a href="#references">References</a><br>
-<span style="color:#fb8509;">9.</span> <a href="#contributors">Contributors</a><br>
+<span style="color:#fb8509;">6.</span> <a href="#future_work">Future Work</a><br>
+<span style="color:#fb8509;">7.</span> <a href="#references">References</a><br>
+<span style="color:#fb8509;">8.</span> <a href="#contributors">Contributors</a><br>
 </p>
 
 ## <span id="about" style="color:#00bbd6;">1. About</span>
@@ -28,19 +27,15 @@ This project looks to improve the life quality of visually impaired individuals 
 
 The Pascal VOC dataset used has the following 20 classes:
 
--   **Person***:* person
+-   **Person:** person
 
--   **Animal***:* bird, cat, cow, dog, horse, sheep
+-   **Animal:** bird, cat, cow, dog, horse, sheep
 
--   **Vehicle***:* aeroplane, bicycle, boat, bus, car, motorbike, train
+-   **Vehicle:** aeroplane, bicycle, boat, bus, car, motorbike, train
 
--   **Indoor***:* bottle, chair, dining table, potted plant, sofa, tv/monitor
+-   **Indoor:** bottle, chair, dining table, potted plant, sofa, tv/monitor
 
-A total of 5008 images are used for training the model. The frequency distribution of the classes in the images can be seen below:
-
-\######################## Add image
-
-It can be seen that there is a class imabalanced. Due to this, it is best to use mAP (mean average precision) metric to asses the performance of the model.
+A total of 5008 images are used for training the model. The dataset has class imbalance. Due to this, it is best to use mAP (mean average precision) metric to asses the performance of the model.
 
 ## <span id="methodology" style="color:#00bbd6;">3. Methodology</span>
 
@@ -50,8 +45,12 @@ The dataset used has 5008 images. This has been split to 70% train, \@20% valid 
 
 Parameters such as learning rate, image size, momentum and weight decay were tuned.
 
-```{python}     learning_rate = trial.suggest_loguniform('learning_rate', 1e-5, 1e-1)     img_size = trial.suggest_categorical('img_size', [320, 416, 512, 640]) # Common yolo image size     momentum = trial.suggest_uniform('momentum', 0.85, 0.99)  # Typical range for momentum     weight_decay = trial.suggest_loguniform('weight_decay', 1e-6, 1e-2)}
-```
+````bash    
+learning_rate = trial.suggest_loguniform('learning_rate', 1e-5, 1e-1)     
+img_size = trial.suggest_categorical('img_size', [320, 416, 512, 640]) # Common yolo image size     
+momentum = trial.suggest_uniform('momentum', 0.85, 0.99)  # Typical range for momentum     
+weight_decay = trial.suggest_loguniform('weight_decay', 1e-6, 1e-2)}
+````
 
 Hyperparameter tuning was done using the **optuna** library. The parameters were set in a range and during the tuning, the parameters are selected randomly from the range and train the model with the selected parameters. This was done for 10 trials. This method was mainly followed due to hardware constraints and to get an idea of what range hyperparameters will be suitable for the problem. The set of parameters which maxmimises the mAP was selected to train the final model.
 
@@ -134,11 +133,9 @@ model.predict(source=0, show=True, save=True, conf=0.5)
 
 ![](images_readme/pascal_voc_dist.png)
 
-- **Limited Computating Resources-** Due to limited computational power of our local machines, it became quite a challenge to test out different models. We started by trying to train 'YOLOv8m' and 'YOLOv8n' models but soon realised that our computers weren't able to handle them. For tuning the smaller 'YOLOv8s' model aswell, we had to lower the range of the hyperparameters for testing. Also, we this caused us to avoide data augmentation as training the model on the current 5,008 images itself took a lot of time.
+- **Limited Computating Resources-** Due to limited computational power of our local machines, it became quite a challenge to test out different models. We started by trying to train 'YOLOv8m' and 'YOLOv8n' models but soon realised that our computers weren't able to handle them. For tuning the smaller 'YOLOv8s' model aswell, we had to lower the range of the hyperparameters for testing. Also, we this caused us to avoid data augmentation as training the model on the current 5,008 images itself took a lot of time.
 
-## <span id="Conclusions" style="color:#00bbd6;">6. Conclusions</span>
-
-## <span id="future_work" style="color:#00bbd6;">7. Future Work</span>
+## <span id="future_work" style="color:#00bbd6;">6. Future Work</span>
 
 As stated, this is just the first step towards our broader goal of improving the life of visually impaired people. 
 - The model itself can be improved by adding more classes (types of objects) and fine-tuning the current classes by adding more diverse images, which will improve detection accuracy and generalization. We can also try training on a more complex YOLO model, which would require significantly more computing power.
@@ -147,7 +144,7 @@ As stated, this is just the first step towards our broader goal of improving the
 
 We look forward to any contributions made to this project in the future.
 
-## <span id="references" style="color:#00bbd6;">8. References</span>
+## <span id="references" style="color:#00bbd6;">7. References</span>
 
 1. Microsoft, ”AI-For-Beginners: Object Detection,” GitHub, 2024. [Online] Available: https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/4-ComputerVision/11-ObjectDetection/ObjectDetection.ipynb
 
@@ -168,7 +165,7 @@ object-detection-guide.
 
 9. Kaggle Competition reference notebook: https://www.kaggle.com/code/sudhanshu2198/yolov8-indoor-objects-detection
 
-## <span id="contributors" style="color:#00bbd6;">9. Contributors</span>
+## <span id="contributors" style="color:#00bbd6;">8. Contributors</span>
 
 - **Suman Bhattacharjee** ([suman.bhattacharjee@ucdconnect.ie](mailto:suman.bhattacharjee@ucdconnect.ie))
 - **Suraj Bodhanandan Nhattuvetty** ([suraj.nhattuvetty@ucdconnect.ie](mailto:suraj.nhattuvetty@ucdconnect.ie))
