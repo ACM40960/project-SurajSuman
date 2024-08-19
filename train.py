@@ -1,9 +1,12 @@
 # Activate the yolood environment yolood
 from ultralytics import YOLO
+import os
+
+source_path = os.path.dirname(os.path.abspath(__file__)) # To get the file path of source
 
 model = YOLO("yolov8s.pt")
 
-model.train(data="C:/Users/imsum/UCD/Summer/Project/yolo_od/PascalYoloFull/data.yaml",
+model.train(data=source_path + "/PascalYoloFull/data.yaml",
             epochs=100,patience=10,batch=8,
             lr0=0.00022759097966394, # Best learning rate found from tuning
             imgsz=640,
