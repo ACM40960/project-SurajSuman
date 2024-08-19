@@ -6,8 +6,12 @@
 
 <p>
 <span style="color:#fb8509;">1.</span> <a href="#about">About</a><br>
-<span style="color:#fb8509;">2.</span> <a href="#example">Example</a><br>
-<span style="color:#fb8509;">3.</span> <a href="#workflow">Workflow</a><br>
+<span style="color:#fb8509;">2.</span> <a href="#dataset">Dataset</a><br>
+<span style="color:#fb8509;">3.</span> <a href="#methodology">Methodology</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8500;">3.1.</span> <a href="#model_tuning">Model Tuning</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8500;">3.2.</span> <a href="#model_training">Model Training</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8500;">3.3.</span> <a href="#model_evaluation">Model Evaluation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8500;">3.4.</span> <a href="#model_testing">Model Testing</a><br>
 <span style="color:#fb8509;">4.</span> <a href="#structure">Project structure</a><br>
 <span style="color:#fb8509;">6.</span> <a href="#models">Models</a><br>
 <span style="color:#fb8509;">7.</span> <a href="#results">Results</a><br>
@@ -22,7 +26,7 @@ This project looks to improve the life quality of visually impaired individuals 
 
 ## <span id="example" style="color:#00bbd6;">2. Example</span>
 
-## 2. Dataset
+## <span id="dataset" style="color:#00bbd6;">2. Dataset</span>
 
 The Pascal VOC dataset used has the following 20 classes:
 
@@ -40,11 +44,11 @@ A total of 5008 images are used for training the model. The frequency distributi
 
 It can be seen that there is a class imabalanced. Due to this, it is best to use mAP (mean average precision) metric to asses the performance of the model.
 
-## 3. Methodology
+## <span id="methodology" style="color:#00bbd6;">3. Methodology</span>
 
 The dataset used has 5008 images. This has been split to 70% train, \@20% valid and 10% test data. The annotations were originally in XML format, this was converted to .txt format using Roboflow.
 
-### Model Tuning
+###  <span id="model_tuning" style="color:#5fa8d3;">3.1 Model Tuning</span>
 
 Parameters such as learning rate, image size, momentum and weight decay were tuned.
 
@@ -53,11 +57,11 @@ Parameters such as learning rate, image size, momentum and weight decay were tun
 
 Hyperparameter tuning was done using the **optuna** library. The parameters were set in a range and during the tuning, the parameters are selected randomly from the range and train the model with the selected parameters. This was done for 10 trials. This method was mainly followed due to hardware constraints and to get an idea of what range hyperparameters will be suitable for the problem. The set of parameters which maxmimises the mAP was selected to train the final model.
 
-### Model Training
+###  <span id="model_training" style="color:#5fa8d3;">3.2 Model Training</span>
 
 The model is then trained for 100 epochs with the selected hyperparameters using the optimizer 'AdamW'. Some layers were also frozen as a pre-trained model and to not lose whatever information was learned.
 
-### Model Evaluation
+###  <span id="model_evaluation" style="color:#5fa8d3;">3.3 Model Evaluation</span>
 
 The confusion matrix, performance metrics like mAP, precision and recall were looked at. The confusion matrix can be seen below:
 
@@ -77,7 +81,7 @@ A visualisation of the above metrics are also shown below:
 
 ![](images_readme/PR_curve.png)
 
-### Model Testing
+###  <span id="model_testing" style="color:#5fa8d3;">3.4 Model Testing</span>
 
 The trained model was also then used to detect and predict the objects in the test data. An image was created which combines multiple predictions and compares it with the original annotations. The image is shown below:
 
