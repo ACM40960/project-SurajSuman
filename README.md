@@ -128,3 +128,47 @@ model.predict(source=0, show=True, save=True, conf=0.5)
 # Change the 0 in 'source=0' to source='<path>'
 ````
 
+## <span id="challenges" style="color:#00bbd6;">5. Challenges</span>
+
+- **Imbalanced Dataset:** Datasets play a huge role in the performance of a model. An imbalanced dataset can can lead to biased models and inaccurate predictions. We had dabbled with a few different datasets but finally went forward with the **'Pascal VOC Dataset'** as we found it was the least imbalanced among the datasets we had tested. Below is the distribution of the different classes in the dataset for training data.
+
+![](images_readme/pascal_voc_dist.png)
+
+- **Limited Computating Resources-** Due to limited computational power of our local machines, it became quite a challenge to test out different models. We started by trying to train 'YOLOv8m' and 'YOLOv8n' models but soon realised that our computers weren't able to handle them. For tuning the smaller 'YOLOv8s' model aswell, we had to lower the range of the hyperparameters for testing. Also, we this caused us to avoide data augmentation as training the model on the current 5,008 images itself took a lot of time.
+
+## <span id="Conclusions" style="color:#00bbd6;">6. Conclusions</span>
+
+## <span id="future_work" style="color:#00bbd6;">7. Future Work</span>
+
+As stated, this is just the first step towards our broader goal of improving the life of visually impaired people. 
+- The model itself can be improved by adding more classes (types of objects) and fine-tuning the current classes by adding more diverse images, which will improve detection accuracy and generalization. We can also try training on a more complex YOLO model, which would require significantly more computing power.
+- The model can be deployed on a portable camera device, such as a Raspberry Pi or Google Lens, to detect objects on the go.
+- Additionally, a speaker can be added to the device to narrate the images that come into view, including their distance.
+
+We look forward to any contributions made to this project in the future.
+
+## <span id="references" style="color:#00bbd6;">8. References</span>
+
+1. Microsoft, ”AI-For-Beginners: Object Detection,” GitHub, 2024. [Online] Available: https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/4-ComputerVision/11-ObjectDetection/ObjectDetection.ipynb
+
+2. V7 Labs, ”Object Detection: The Ultimate Guide,” V7 Labs Blog, 2024. [Online]. Available: https://www.v7labs.com/blog/
+object-detection-guide.
+
+3. Keras, ”Keras Example: RetinaNet,” Keras Documentation, 2024. [Online] Available: https://keras.io/examples/vision/retinanet/.
+
+4. Kili Technology, ”YOLO Algorithm: Real-Time Object Detection from A to Z”, Kili Technology, 2023. [Online]. Available: https://kili-technology.com/data-labeling/machine-learning/yolo-algorithm-real-time-ob
+
+5. M. Tan and Q. V. Le, ”EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks,” IEEE Explore, 2020. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/9145130.
+
+6. Ben Atitallah, A.; Said, Y.; Ben Atitallah, M.A.; Albekairi, M.; Kaaniche, K.; Boubaker, S. An effective obstacle detection system using deep learning advantages to aid blind and visually impaired navigation. Ain Shams Eng. J. 2024, 15, 102387. Available: https://www.sciencedirect.com/science/article/pii/S2090447923002769
+
+7. Dataset: http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html
+
+8. Ultralytics Official GitHub Repository: https://github.com/ultralytics/ultralytics
+
+9. Kaggle Competition reference notebook: https://www.kaggle.com/code/sudhanshu2198/yolov8-indoor-objects-detection
+
+## <span id="contributors" style="color:#00bbd6;">9. Contributors</span>
+
+- **Suman Bhattacharjee** ([suman.bhattacharjee@ucdconnect.ie](mailto:suman.bhattacharjee@ucdconnect.ie))
+- **Suraj Bodhanandan Nhattuvetty** ([suraj.nhattuvetty@ucdconnect.ie](mailto:suraj.nhattuvetty@ucdconnect.ie))
