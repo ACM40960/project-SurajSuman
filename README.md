@@ -162,6 +162,12 @@ object-detection-guide.
 
 6. Ben Atitallah, A.; Said, Y.; Ben Atitallah, M.A.; Albekairi, M.; Kaaniche, K.; Boubaker, S. An effective obstacle detection system using deep learning advantages to aid blind and visually impaired navigation. Ain Shams Eng. J. 2024, 15, 102387. Available: https://www.sciencedirect.com/science/article/pii/S2090447923002769
 
+7. Dataset: http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html
+
+8. Ultralytics Official GitHub Repository: https://github.com/ultralytics/ultralytics
+
+9. Kaggle Competition reference notebook: https://www.kaggle.com/code/sudhanshu2198/yolov8-indoor-objects-detection
+
 ## <span id="contributors" style="color:#00bbd6;">9. Contributors</span>
 
 - **Suman Bhattacharjee** ([suman.bhattacharjee@ucdconnect.ie](mailto:suman.bhattacharjee@ucdconnect.ie))
