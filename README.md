@@ -134,4 +134,17 @@ model.predict(source=0, show=True, save=True, conf=0.5)
 
 ![](images_readme/pascal_voc_dist.png)
 
-- **Limited Computating Resources-**
+- **Limited Computating Resources-** Due to limited computational power of our local machines, it became quite a challenge to test out different models. We started by trying to train 'YOLOv8m' and 'YOLOv8n' models but soon realised that our computers weren't able to handle them. For tuning the smaller 'YOLOv8s' model aswell, we had to lower the range of the hyperparameters for testing. Also, we this caused us to avoide data augmentation as training the model on the current 5,008 images itself took a lot of time.
+
+## <span id="Conclusions" style="color:#00bbd6;">6. Conclusions</span>
+
+## <span id="future_work" style="color:#00bbd6;">7. Future Work</span>
+
+As stated, this is just the first step towards our broader goal of improving the life of visually impaired people. 
+- The model itself can be improved by adding more classes (types of objects) and fine-tuning the current classes by adding more diverse images, which will improve detection accuracy and generalization. We can also try training on a more complex YOLO model, which would require significantly more computing power.
+- The model can be deployed on a portable camera device, such as a Raspberry Pi or Google Lens, to detect objects on the go.
+- Additionally, a speaker can be added to the device to narrate the images that come into view, including their distance.
+
+We look forward to any contributions made to this project in the future.
+
+## <span id="references" style="color:#00bbd6;">8. References</span>
