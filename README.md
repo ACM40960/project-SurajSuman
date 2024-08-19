@@ -128,3 +128,10 @@ model.predict(source=0, show=True, save=True, conf=0.5)
 # Change the 0 in 'source=0' to source='<path>'
 ````
 
+## <span id="challenges" style="color:#00bbd6;">5. Challenges</span>
+
+- **Imbalanced Dataset:** Datasets play a huge role in the performance of a model. An imbalanced dataset can can lead to biased models and inaccurate predictions. We had dabbled with a few different datasets but finally went forward with the **'Pascal VOC Dataset'** as we found it was the least imbalanced among the datasets we had tested. Below is the distribution of the different classes in the dataset for training data.
+
+![](images_readme/pascal_voc_dist.png)
+
+- **Limited Computating Resources-**
