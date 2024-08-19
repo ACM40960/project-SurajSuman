@@ -6,23 +6,25 @@
 
 <p>
 <span style="color:#fb8509;">1.</span> <a href="#about">About</a><br>
-<span style="color:#fb8509;">2.</span> <a href="#example">Example</a><br>
-<span style="color:#fb8509;">3.</span> <a href="#workflow">Workflow</a><br>
-<span style="color:#fb8509;">4.</span> <a href="#structure">Project structure</a><br>
-<span style="color:#fb8509;">6.</span> <a href="#models">Models</a><br>
-<span style="color:#fb8509;">7.</span> <a href="#results">Results</a><br>
-<span style="color:#fb8509;">8.</span> <a href="#conclusions">Conclusions</a><br>
-<span style="color:#fb8509;">9.</span> <a href="#references">References</a><br>
-<span style="color:#fb8509;">10.</span> <a href="#contributors">Contributors</a><br>
+<span style="color:#fb8509;">2.</span> <a href="#dataset">Dataset</a><br>
+<span style="color:#fb8509;">3.</span> <a href="#methodology">Methodology</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8509;">3.1.</span> <a href="#model_tuning">Model Tuning</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8509;">3.2.</span> <a href="#model_training">Model Training</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8509;">3.3.</span> <a href="#model_evaluation">Model Evaluation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fb8509;">3.4.</span> <a href="#model_testing">Model Testing</a><br>
+<span style="color:#fb8509;">4.</span> <a href="#real_time_predictions">Real Time Predictions</a><br>
+<span style="color:#fb8509;">5.</span> <a href="#challenges">Challenges</a><br>
+<span style="color:#fb8509;">6.</span> <a href="#conclusions">Conclusions</a><br>
+<span style="color:#fb8509;">7.</span> <a href="#future_work">Future Work</a><br>
+<span style="color:#fb8509;">8.</span> <a href="#references">References</a><br>
+<span style="color:#fb8509;">9.</span> <a href="#contributors">Contributors</a><br>
 </p>
 
 ## <span id="about" style="color:#00bbd6;">1. About</span>
 
 This project looks to improve the life quality of visually impaired individuals by helping them understand their surroundings better by leveraging machine learning to **detect object** present in the field of view. This project contains the tuning and training of the model on the [Pascal VOC Dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html) which contains labeled images of 20 different classes followed by identifying images real-time using our webcam or simulating it using images/videos.
 
-## <span id="example" style="color:#00bbd6;">2. Example</span>
-
-## 2. Dataset
+## <span id="dataset" style="color:#00bbd6;">2. Dataset</span>
 
 The Pascal VOC dataset used has the following 20 classes:
 
@@ -40,11 +42,11 @@ A total of 5008 images are used for training the model. The frequency distributi
 
 It can be seen that there is a class imabalanced. Due to this, it is best to use mAP (mean average precision) metric to asses the performance of the model.
 
-## 3. Methodology
+## <span id="methodology" style="color:#00bbd6;">3. Methodology</span>
 
 The dataset used has 5008 images. This has been split to 70% train, \@20% valid and 10% test data. The annotations were originally in XML format, this was converted to .txt format using Roboflow.
 
-### Model Tuning
+###  <span id="model_tuning" style="color:#5fa8d3;">3.1 Model Tuning</span>
 
 Parameters such as learning rate, image size, momentum and weight decay were tuned.
 
@@ -53,11 +55,11 @@ Parameters such as learning rate, image size, momentum and weight decay were tun
 
 Hyperparameter tuning was done using the **optuna** library. The parameters were set in a range and during the tuning, the parameters are selected randomly from the range and train the model with the selected parameters. This was done for 10 trials. This method was mainly followed due to hardware constraints and to get an idea of what range hyperparameters will be suitable for the problem. The set of parameters which maxmimises the mAP was selected to train the final model.
 
-### Model Training
+###  <span id="model_training" style="color:#5fa8d3;">3.2 Model Training</span>
 
 The model is then trained for 100 epochs with the selected hyperparameters using the optimizer 'AdamW'. Some layers were also frozen as a pre-trained model and to not lose whatever information was learned.
 
-### Model Evaluation
+###  <span id="model_evaluation" style="color:#5fa8d3;">3.3 Model Evaluation</span>
 
 The confusion matrix, performance metrics like mAP, precision and recall were looked at. The confusion matrix can be seen below:
 
@@ -77,10 +79,52 @@ A visualisation of the above metrics are also shown below:
 
 ![](images_readme/PR_curve.png)
 
-### Model Testing
+###  <span id="model_testing" style="color:#5fa8d3;">3.4 Model Testing</span>
 
 The trained model was also then used to detect and predict the objects in the test data. An image was created which combines multiple predictions and compares it with the original annotations. The image is shown below:
 
 ![](images_readme/2.png)
 
 It can be seen that the detections are very accurate. The model can be further improved upon by letting it be tuned further with a bigger hyperparameter space and using a more complex model YOLOv8 model such as the YOLOv8m or YOLOv8l.
+
+## <span id="real_time_predictions" style="color:#00bbd6;">4. Real Time Predictions</span>
+
+Now that the model has been trained, we can use it to do real time object detection using our webcam. The weights for the model are present in the file ".\runs\detect\train7\weights\best.pt". 
+
+To use these weights and detect objects in real time, follow the below steps:
+
+### Step 1: Clone the project
+
+For cloning the project, navigate to the required folder in your local system and run the below command:
+
+````bash
+git clone https://github.com/ACM40960/project-SurajSuman.git
+````
+
+### Step 2: Installing the required packages
+
+Install all the python packages required. It is recommended to create a separate environment to avoid any conflicts.
+
+````bash
+pip install requirements.txt
+````
+
+### Step 3: Running the script (webcam required)
+
+To start the real time detection, run the **"predict.py"** script using the below command:
+
+````bash
+python predict.py
+````
+
+This will turn the webcam on and start detect any object out of the 20 classes on which it has been trained
+
+### Step 4: Detecting objects on images and videos
+
+In case you don't have access to a webcam, you can run the detection model on images and videos present in your system. For this, open the **"predict.py"** script and change the source from '0' to the path of your image/video
+
+````bash
+model.predict(source=0, show=True, save=True, conf=0.5)
+# Change the 0 in 'source=0' to source='<path>'
+````
+
