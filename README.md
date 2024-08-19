@@ -1,6 +1,6 @@
 # <span style="color:#237094;">Object Detection for Visually Impaired</span>
 
-![Python Version](https://img.shields.io/badge/python-3.12.4%2B-blue) ![Platform](https://img.shields.io/badge/platform-%20jupyter%20%7C%20python script-lightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Python Version](https://img.shields.io/badge/python-3.12.4%2B-blue) ![Platform](https://img.shields.io/badge/platform-jupyter%20%7C%20python%20script-lightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
 
 ## Table of Contents
 
