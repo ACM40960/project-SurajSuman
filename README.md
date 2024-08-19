@@ -1,2 +1,19 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/PwK3l629)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15099726&assignment_repo_type=AssignmentRepo)
+# <span style="color:#237094;">Object Detection for Visually Impaired</span>
+
+![Python Version](https://img.shields.io/badge/python-3.12.4%2B-blue) ![Platform](https://img.shields.io/badge/platform-%20jupyter%20%7C%20python script-lightgreen) ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
+
+## Table of Contents
+
+<p>
+<span style="color:#fb8500;">1.</span> <a href="#about">About</a><br>
+<span style="color:#fb8500;">2.</span> <a href="#example">Example</a><br>
+<span style="color:#fb8500;">3.</span> <a href="#workflow">Workflow</a><br>
+<span style="color:#fb8500;">4.</span> <a href="#structure">Project structure</a><br>
+<span style="color:#fb8500;">6.</span> <a href="#models"> Models</a><br>
+<span style="color:#fb8500;">7.</span> <a href="#results"> Results</a><br>
+<span style="color:#fb8500;">8.</span> <a href="#conclusions"> Conclusions</a><br>
+<span style="color:#fb8500;">9.</span> <a href="#references"> References</a><br>
+<span style="color:#fb8500;">10.</span> <a href="#contributors"> Contributors</a><br>
+</p>
+
+## <span id="about" style="color:#00bbd6;">1. About</span>
