@@ -1,0 +1,13 @@
+train: C:/Users/imsum/UCD/Summer/Project/yolo_od/PascalYoloFull/train
+val: C:/Users/imsum/UCD/Summer/Project/yolo_od/PascalYoloFull/valid
+test: C:/Users/imsum/UCD/Summer/Project/yolo_od/PascalYoloFull/test
+
+nc: 20
+names: ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
+
+roboflow:
+  workspace: demo-hi97a
+  project: demoproject3
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/demo-hi97a/demoproject3/dataset/1
