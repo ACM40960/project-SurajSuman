@@ -39,7 +39,7 @@ A total of 5008 images are used for training the model. The dataset has class im
 
 ## <span id="methodology" style="color:#00bbd6;">3. Methodology</span>
 
-The dataset used has 5008 images. This has been split to 70% train, \@20% valid and 10% test data. The annotations were originally in XML format, this was converted to .txt format using Roboflow.
+The dataset used has 5008 images. This has been split to 70% train, 20% valid and 10% test data. The annotations were originally in XML format, this was converted to .txt format using Roboflow.
 
 ###  <span id="model_tuning" style="color:#5fa8d3;">3.1 Model Tuning</span>
 
