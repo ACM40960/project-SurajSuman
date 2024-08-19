@@ -124,6 +124,7 @@ This will turn the webcam on and start detect any object out of the 20 classes o
 In case you don't have access to a webcam, you can run the detection model on images and videos present in your system. For this, open the **"predict.py"** script and change the source from '0' to the path of your image/video
 
 ````bash
-model.predict(source=`***0`***, show=True, save=True, conf=0.5)
-# Change the 0 in source=0 to source='<path>'
+model.predict(source=0, show=True, save=True, conf=0.5)
+# Change the 0 in 'source=0' to source='<path>'
 ````
+
