@@ -148,3 +148,21 @@ As stated, this is just the first step towards our broader goal of improving the
 We look forward to any contributions made to this project in the future.
 
 ## <span id="references" style="color:#00bbd6;">8. References</span>
+
+1. Microsoft, ”AI-For-Beginners: Object Detection,” GitHub, 2024. [Online] Available: https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/4-ComputerVision/11-ObjectDetection/ObjectDetection.ipynb
+
+2. V7 Labs, ”Object Detection: The Ultimate Guide,” V7 Labs Blog, 2024. [Online]. Available: https://www.v7labs.com/blog/
+object-detection-guide.
+
+3. Keras, ”Keras Example: RetinaNet,” Keras Documentation, 2024. [Online] Available: https://keras.io/examples/vision/retinanet/.
+
+4. Kili Technology, ”YOLO Algorithm: Real-Time Object Detection from A to Z”, Kili Technology, 2023. [Online]. Available: https://kili-technology.com/data-labeling/machine-learning/yolo-algorithm-real-time-ob
+
+5. M. Tan and Q. V. Le, ”EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks,” IEEE Explore, 2020. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/9145130.
+
+6. Ben Atitallah, A.; Said, Y.; Ben Atitallah, M.A.; Albekairi, M.; Kaaniche, K.; Boubaker, S. An effective obstacle detection system using deep learning advantages to aid blind and visually impaired navigation. Ain Shams Eng. J. 2024, 15, 102387. Available: https://www.sciencedirect.com/science/article/pii/S2090447923002769
+
+## <span id="contributors" style="color:#00bbd6;">9. Contributors</span>
+
+- **Suman Bhattacharjee** ([suman.bhattacharjee@ucdconnect.ie](mailto:suman.bhattacharjee@ucdconnect.ie))
+- **Suraj Bodhanandan Nhattuvetty** ([suraj.nhattuvetty@ucdconnect.ie](mailto:suraj.nhattuvetty@ucdconnect.ie))
